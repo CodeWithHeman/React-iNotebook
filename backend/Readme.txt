@@ -23,3 +23,8 @@ About to write to C:\Study Tutorials\React\inotebook\backend\package.json:
 PS C:\Study Tutorials\React\inotebook\backend> npm i express
 PS C:\Study Tutorials\React\inotebook\backend> npm i mongoose
 
+
+PS C:\Study Tutorials\React\inotebook\backend> npm i -g nodemon
+PS C:\Study Tutorials\React\inotebook\backend> nodemon ./index.js
+
+
