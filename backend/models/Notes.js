@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
+const { Schema } = mongoose
 
 const NotesSchema = new Schema({
+    user:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'user'//copy from model User.js object user
+    },
     title: {
         type: String,
         required: true
