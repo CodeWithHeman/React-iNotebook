@@ -27,4 +27,12 @@ PS C:\Study Tutorials\React\inotebook\backend> npm i mongoose
 PS C:\Study Tutorials\React\inotebook\backend> npm i -g nodemon
 PS C:\Study Tutorials\React\inotebook\backend> nodemon ./index.js
 
+Express Validation Js
+PS C:\Study Tutorials\React\inotebook\backend> npm install --save 
+express-validator
 
+Password Encryptions
+PS C:\Study Tutorials\React\inotebook\backend> npm i bcrypt 
+
+//Json WebToken
+PS C:\Study Tutorials\React\inotebook\backend> npm i jsonwebtoken
