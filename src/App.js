@@ -5,6 +5,7 @@ import Home from './components/Home';
 import About from './components/About';
 import NoteState from './context/notes/NoteState';
 import NavbarState from './context/navbar/NavbarState';
+import Alert from './components/Alert';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Router>
           <NavbarState>
             <Navbar />
+            <Alert message="This is amazing react course"/>
           </NavbarState>
           <div className='container'>
           <Routes>

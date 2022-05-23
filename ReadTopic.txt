@@ -1,0 +1,11 @@
+https://www.w3schools.com/react/react_useeffect.asp
+
+- What is a useEffect?
+    useEffect(callback, dependencies) is the hook that manages the side-effects in functional components.
+- Why is useEffect used?
+    useEffect Hook is to eliminate the side-effects of using class-based components. For example, tasks like updating the DOM, fetching data from API end-points, setting up subscriptions or timers, etc can be lead to unwarranted side-effects.
+- What is useState and useEffect in React?
+    To put it simply, both useState and useEffect enhance functional components to make them do things that classes can but functional components (without hooks) cannot:
+
+    useState allows functional components to have state, like this.state in class components.
+    useEffect allows functional components to have lifecycle methods (such as componentDidMount, componentDidUpdate and componentWillUnmount) in one single API.
