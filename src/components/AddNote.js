@@ -6,12 +6,13 @@ const AddNote = () => {
     const {addNote}=ncontext;
 
     //Initalize set with default value (empty)
-    const [note,setNote]=useState({title:'',description:'',tag:'default'})
+    const [note,setNote]=useState({title:'',description:'',tag:''})
 
     //Arrow Fucntion
     const handleClick = (e)=>{
         e.preventDefault();
         addNote(note);
+        setNote({title:'',description:'',tag:'default'});
     }
 
     const onChange=(e)=>{
@@ -28,15 +29,15 @@ const AddNote = () => {
         <form>
           <div className="mb-3">
             <label htmlFor="title" className="form-label">Title</label>
-            <input type="text" name="title" className="form-control" id="title" onChange={onChange} />            
+            <input type="text" name="title" className="form-control" id="title" value={note.title} onChange={onChange} />            
           </div>
           <div className="mb-3">
             <label htmlFor="description" className="form-label">Description</label>
-            <textarea type="text" name="description" className="form-control" id="description"  onChange={onChange} />            
+            <textarea type="text" name="description" className="form-control" id="description" value={note.description}  onChange={onChange} />            
           </div>  
           <div className="mb-3">
             <label htmlFor="tag" className="form-label">Tag</label>
-            <input type="text" name="tag" className="form-control" id="tag"  onChange={onChange} />            
+            <input type="text" name="tag" className="form-control" id="tag" value={note.tag}  onChange={onChange} />            
           </div>        
           <button type="submit" className="btn btn-primary" onClick={handleClick}>Add Note</button>
         </form>

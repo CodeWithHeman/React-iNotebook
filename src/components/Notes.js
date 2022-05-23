@@ -1,32 +1,33 @@
-import { useContext,useState,useEffect, useRef } from 'react';
+import { useContext, useState, useEffect, useRef } from 'react';
 import noteContext from '../context/notes/noteContext';
 import AddNote from './AddNote';
 import NoteItem from './NoteItem';
 const Notes = () => {
     const ncontext = useContext(noteContext)
-    const {notes, getNotes,editNote } = ncontext;
+    const { notes, getNotes, editNote } = ncontext;
 
     //Initalize set with default value (empty)
-    //Remove line : const [ditnote,setNote]=useState({etitle:'',edescription:'',etag:'default'})
-    const [editnote,setEditNote]=useState([]);
+    //const [note,setNote]=useState({etitle:'',edescription:'',etag:'default'})
+    const [editnote, setEditNote] = useState({title:'',description:'',tag:'default'});
 
-    useEffect(() => {        
+    useEffect(() => {
         getNotes();
         // eslint-desable-next-line
     }, []);
-    
-    const updateNote=(currentNote)=>{        
+
+    const updateNote = (currentNote) => {
         setEditNote(currentNote);
         refEditModel.current.click();
     }
 
-    const refEditModel =useRef(null);
+    const refEditModel = useRef(null);
     const refEditClose = useRef(null);
-   
+
     //Arrow Fucntion
-    const handleClick = (e) => {        
-        editNote(editnote._id,editnote.title,editnote.description,editnote.tag);
-        refEditClose.current.click();        
+    const handleClick = (e) => {
+        editNote(editnote._id, editnote.title, editnote.description, editnote.tag);
+        refEditClose.current.click();
+        setEditNote({title:'',description:'',tag:'default'})
     }
 
     const onChange = (e) => {
@@ -62,7 +63,7 @@ const Notes = () => {
                                 <div className="mb-3">
                                     <label htmlFor="tag" className="form-label">Tag</label>
                                     <input type="text" name="tag" className="form-control" id="etag" value={editnote.tag} onChange={onChange} />
-                                </div>                                
+                                </div>
                             </form>
                         </div>
                         <div className="modal-footer">
@@ -72,11 +73,15 @@ const Notes = () => {
                     </div>
                 </div>
             </div>
-            <div className='row my-3'>
+            <div className='row my-5'>
                 <h2>You Notes</h2>
+                <hr/>
                 {
                     notes.map((note) => { return <NoteItem key={note._id} updateNote={updateNote} note={note} /> })
                 }
+                <div className="container">
+                    {notes.length == 0 && 'No notes to display'}
+                </div>
             </div>
         </>
     )
