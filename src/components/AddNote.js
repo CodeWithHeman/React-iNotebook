@@ -12,7 +12,7 @@ const AddNote = () => {
     const handleClick = (e)=>{
         e.preventDefault();
         addNote(note);
-        setNote({title:'',description:'',tag:'default'});
+        setNote({title:'',description:'',tag:''});
     }
 
     const onChange=(e)=>{
